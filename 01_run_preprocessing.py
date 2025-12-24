@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-GBS Alignment-free Pipeline (Preprocessing, Geometry, Deconvolution)
+GBS Q1-style "physics/geometry/graph/portfolio" starter pipeline (alignment-free) for paired FASTQ(.gz).
 
 Inputs (expected in one folder):
   SRRxxxxxxx_1.fastq.gz
@@ -12,7 +12,6 @@ Outputs:
   results/figures/supplementary/*.png + *.pdf
 """
 import argparse, gzip, zlib
-import sys
 from pathlib import Path
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
@@ -237,7 +236,7 @@ def plot_depth_bar(manifest: pd.DataFrame, outdir: Path):
     ax.set_ylabel("Total file size (MB) [proxy for sequencing depth]")
     ax.set_title("Sequencing depth proxy per sample (R1+R2 gz size)")
     ax.tick_params(axis="x", labelrotation=90)
-    save_fig(fig, outdir / "figures" / "main" / "depth_proxy.png", outdir / "figures" / "main" / "depth_proxy.pdf")
+    save_fig(fig, outdir / "figures" / "main" / "Fig_depth_proxy.png", outdir / "figures" / "main" / "Fig_depth_proxy.pdf")
 
 
 def plot_quality_profiles(per_pos_dict: Dict[Tuple[str, str], np.ndarray], groups: Dict[str, str], outdir: Path):
@@ -264,7 +263,7 @@ def plot_quality_profiles(per_pos_dict: Dict[Tuple[str, str], np.ndarray], group
     ax.set_ylabel("Mean Phred quality")
     ax.set_title("Mean per-base quality profile (group-averaged)")
     ax.legend()
-    save_fig(fig, outdir / "figures" / "main" / "quality_profiles.png", outdir / "figures" / "main" / "quality_profiles.pdf")
+    save_fig(fig, outdir / "figures" / "main" / "Fig_quality_profiles.png", outdir / "figures" / "main" / "Fig_quality_profiles.pdf")
 
 
 def plot_heatmap_dendrogram(D: np.ndarray, labels: List[str], outdir: Path):
@@ -447,27 +446,21 @@ def deconvolve_pools(X: np.ndarray, labels: List[str], depth_groups: Dict[str, s
 
 def main():
     ap = argparse.ArgumentParser()
-    
-    # Allow both --input and --fastq_dir as aliases
-    ap.add_argument("--input", required=False, help="Folder with *_1.fastq.gz and *_2.fastq.gz (alias: --fastq_dir)")
+    # Accept both the original flags (--input/--out) and README-friendly aliases (--fastq_dir/--outdir)
+    ap.add_argument("--input", required=False, help="Folder with *_1.fastq(.gz) and *_2.fastq(.gz) files (alias: --fastq_dir)")
     ap.add_argument("--out", required=False, help="Output folder (alias: --outdir)")
-    
-    # Aliases
     ap.add_argument("--fastq_dir", dest="input", required=False, help="Alias of --input")
     ap.add_argument("--outdir", dest="out", required=False, help="Alias of --out")
-
     ap.add_argument("--qc_reads", type=int, default=200000, help="Reads sampled per FASTQ for QC (0 = use ALL reads)")
     ap.add_argument("--kmer_reads", type=int, default=50000, help="Reads sampled per FASTQ for k-mers (0 = use ALL reads)")
     ap.add_argument("--k", type=int, default=21, help="k-mer length")
     ap.add_argument("--dim", type=int, default=16384, help="Hashed feature dimension")
     ap.add_argument("--step", type=int, default=4, help="Stride for k-mer sampling within reads")
     ap.add_argument("--n_groups", type=int, default=5, help="How many cultivar groups to infer among HiDepth samples")
-    
     args = ap.parse_args()
 
-    # Ensure input/out args are provided via either name
     if args.input is None or args.out is None:
-        ap.error("You must provide input/output folders using either --input/--out OR --fastq_dir/--outdir.")
+        ap.error("You must provide input/output folders using either --input/--out or --fastq_dir/--outdir.")
 
     in_dir = Path(args.input)
     out_dir = Path(args.out)
@@ -535,23 +528,23 @@ def main():
         labels.append(s)
     X = np.vstack(feats)
 
-    # entropy
+    # entropy + Fig
     ent = {s: shannon_entropy(X[i]) for i, s in enumerate(labels)}
     plot_entropy_gc(qc_df, ent, out_dir)
 
-    # distances
+    # distances + Fig
     D = pairwise_js_distance_matrix(X)
     dist_df = pd.DataFrame(D, index=labels, columns=labels)
     dist_df.to_csv(out_dir / "kmer_js_distance.csv")
     _order, _Z = plot_heatmap_dendrogram(D, labels, out_dir)
 
-    # Embedding
+    # Fig embedding
     embed_df = plot_embedding(X, labels, depth_groups, out_dir)
 
-    # Network
+    # network + Fig
     net_metrics, node2c = build_similarity_network(D, labels, out_dir)
 
-    # Cultivar grouping
+    # cultivar grouping + Fig
     indiv_groups, _ = cluster_individuals(D, labels, depth_groups, n_groups=args.n_groups)
     W, agg = deconvolve_pools(X, labels, depth_groups, indiv_groups, out_dir)
 
