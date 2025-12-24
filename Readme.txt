@@ -22,7 +22,9 @@ Please run the numbered scripts in the following order to reproduce the results.
 4. **Robustness Sweeps (Figure 5)**
    python 04_run_sensitivity_sweeps.py --fastq_dir ./data --outdir ./results/sensitivity --n_boot 30
 
-## Utility Scripts
-- utils_kmer_matrix.py: Core logic for k-mer matrix construction.
-- utils_fastq_qc.py: Helper for checking FASTQ quality.
-- utils_visualization.py: Helper for plotting PCA/PCoA.
+## Notes
+- Scripts 01–06 are self-contained; no separate utils_*.py files are required.
+- To avoid ambiguity, pass the known pool SRR IDs explicitly:
+  - Synthetic calibration / mapping (03): use --known_pools "SRR...,SRR...,..."
+  - Final validation check (06): use --true_pools "SRR...,SRR...,..."
+- Jensen–Shannon distance (sqrt of JS divergence) is used throughout the geometry steps.
