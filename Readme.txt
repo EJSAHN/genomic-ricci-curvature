@@ -17,9 +17,13 @@ Please run the numbered scripts in the following order to reproduce the results.
 5. **Final Validation Check (Fig. 11 / Validation plot)**
    python 06_final_check.py --results_dir ./results --true_pools "SRR17037621,SRR17037622,SRR17037623"
 
+6. **Optional: Metadata-based validation (if labels/runinfo are available)**
+   python 05_check_metadata.py --results_dir ./results --metadata ./data/metadata.csv
+
 ## Notes
 - Helper modules `utils_*.py` are included and used by the numbered scripts.
 - Jensen–Shannon distance (sqrt of JS divergence) is used throughout the geometry steps.
 - Ground truth pool IDs are passed explicitly via `--known_pools` (03) and `--true_pools` (06) to avoid ambiguity.
 - FASTQ files and the `results/` directory are not committed to GitHub (see `.gitignore`).
+
 
