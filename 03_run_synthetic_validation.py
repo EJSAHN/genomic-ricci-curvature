@@ -438,7 +438,14 @@ def main() -> None:
     ap.add_argument("--alpha", type=float, default=0.5, help="ORC neighborhood mass (0..1)")
     ap.add_argument("--seed", type=int, default=42, help="Random seed")
     ap.add_argument("--use_r2", action="store_true", help="Also include R2 reads (slower)")
-    ap.add_argument("--include_real_pools", action="store_true", help="Also sketch real pools (SRR17037618-22) and map them")
+    ap.add_argument("--include_real_pools", action="store_true", help="Also sketch real pools (from --known_pools or default_known_pools()) and map them")
+    ap.add_argument(
+        "--known_pools",
+        default="",
+        help=("Comma-separated SRR IDs to treat as REAL pools for this study. "
+              "If empty, uses default_known_pools(). "
+              "Example: SRR17037621,SRR17037622,SRR17037623"),
+    )
     args = ap.parse_args()
 
     outdir = args.outdir
@@ -451,7 +458,10 @@ def main() -> None:
     if not fastqs:
         raise SystemExit(f"[ERR] No SRR FASTQs discovered in: {args.fastq_dir}")
 
-    known_pools = set(default_known_pools())
+    if args.known_pools.strip():
+        known_pools = {s.strip().upper() for s in args.known_pools.split(',') if s.strip()}
+    else:
+        known_pools = set(default_known_pools())
     all_samples = sorted(fastqs.keys())
 
     # define "pure" individuals for sketching
