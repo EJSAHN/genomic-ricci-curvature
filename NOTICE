@@ -1,0 +1,5 @@
+This repository contains research software for compositional and graph-based screening of sequencing libraries.
+
+The software reports statistical and geometric screening signals. It does not determine the biological or technical cause of a flagged library. Results should be evaluated with experimental metadata, technical controls, and orthogonal analyses.
+
+Mention of trade names or commercial products is solely for the purpose of providing specific information and does not imply recommendation or endorsement by the U.S. Department of Agriculture. USDA is an equal opportunity provider and employer.

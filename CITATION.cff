@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the associated article when using this software."
+title: "Genomic Ricci Curvature"
+type: software
+version: 1.0.0
+date-released: 2026-08-24
+url: https://github.com/EJSAHN/genomic-ricci-curvature
+authors:
+  - family-names: "Ahn"
+    given-names: "Ezekiel"
+  - family-names: "Baek"
+    given-names: "Insuck"
+  - family-names: "Zhang"
+    given-names: "Dapeng"
+  - family-names: "Kim"
+    given-names: "Moon S."
+  - family-names: "Lim"
+    given-names: "Seunghyun"
+  - family-names: "Park"
+    given-names: "Sunchung"
+  - family-names: "Meinhardt"
+    given-names: "Lyndel W."
