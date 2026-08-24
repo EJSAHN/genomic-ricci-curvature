@@ -1,0 +1,27 @@
+{
+  "module_name": "reference_qc_crossfit",
+  "version": "2026.08",
+  "evaluation_design": {
+    "outer": "leave-one-generated-replicate-out",
+    "inner": "leave-one-training-replicate-out calibration",
+    "references": [
+      "ET39",
+      "Cara1"
+    ],
+    "primary_score": "reference_qc_crossfit",
+    "full_score_weights": {
+      "marker": 0.75,
+      "mapping": 0.25
+    }
+  },
+  "parameters": {
+    "min_control_call_rate": 0.3,
+    "max_features": 5000,
+    "max_pca_components": 5,
+    "min_overlap": 10
+  },
+  "performance_thresholds": {
+    "supported_auc_min": 0.7,
+    "weak_to_moderate_auc_min": 0.6
+  }
+}

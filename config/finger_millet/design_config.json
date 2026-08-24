@@ -1,0 +1,82 @@
+{
+  "dataset": "finger_millet_PRJNA791522",
+  "expected_selection_manifest_sha256": "92a780376f8ca250402f6ad2330b27f70b39e433c4b2b85d7b33ea88ee002e1e",
+  "qc": {
+    "sample_pairs_per_library": 200000,
+    "workers": 2,
+    "warning_thresholds": {
+      "mean_phred": 25,
+      "n_fraction": 0.01,
+      "adapter_read_fraction": 0.05
+    },
+    "warnings_trigger_exclusion": false
+  },
+  "segments": {
+    "full_cohort_geometry": {
+      "offset": 0,
+      "pairs": 50000
+    },
+    "source_design": {
+      "offset": 50000,
+      "pairs": 30000
+    },
+    "unused_gap": {
+      "offset": 80000,
+      "pairs": 20000
+    },
+    "synthetic_eligible_start": 100000
+  },
+  "source_panel": {
+    "per_population": 4,
+    "total": 28,
+    "seed": 79152228,
+    "minimum_pair_count": 500000
+  },
+  "sketch": {
+    "mode": "paired",
+    "kmer": 17,
+    "dimension": 16384
+  },
+  "graph_lock": {
+    "full_cohort_candidate_k": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "synthetic_candidate_k": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "rule": "smallest k yielding connected symmetric-union graph"
+  },
+  "synthetic": {
+    "replicates": 5,
+    "read_pairs_per_library": 6000,
+    "controls_per_replicate": 28,
+    "mixtures_per_replicate": 84,
+    "orc_alpha": 0.5,
+    "seed": 79152284
+  },
+  "rare_event": {
+    "injection_counts": [
+      1,
+      2,
+      4
+    ],
+    "primary_injection_count": 1
+  }
+}

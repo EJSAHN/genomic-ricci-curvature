@@ -1,0 +1,34 @@
+{
+  "module_name": "reference_based_coffee_qc",
+  "source_fastq_root": "data/coffee/fastq",
+  "read_level_root": "results/coffee/read_level",
+  "baseline_reproduction_root": "results/coffee/core",
+  "reference_ids": [
+    "ET39",
+    "Cara1"
+  ],
+  "bowtie2_version": "2.5.5",
+  "source_pairs_for_marker_discovery": 100000,
+  "generated_pairs_per_library": 6000,
+  "real_pairs_per_library": 50000,
+  "real_skip_pairs": 100000,
+  "min_mapq": 20,
+  "min_baseq": 20,
+  "min_alt_total": 4,
+  "min_alt_samples": 2,
+  "min_alt_in_one_sample": 4,
+  "max_marker_panel_size": 50000,
+  "max_markers_for_scoring": 5000,
+  "minimum_control_call_rate": 0.3,
+  "minimum_pairwise_marker_overlap": 10,
+  "threads": 4,
+  "seed": 52000,
+  "primary_endpoint": "dual_reference_consensus_roc_auc_across_five_primary_replicates",
+  "performance_thresholds": {
+    "supported": 0.7,
+    "weak_to_moderate": 0.6
+  },
+  "marker_discovery_excludes_generated_pairs": true,
+  "marker_discovery_excludes_real_scoring_segment": true,
+  "minimum_free_gb": 14.0
+}

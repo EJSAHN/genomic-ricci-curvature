@@ -1,0 +1,10 @@
+{
+  "primary_scenario": "primary",
+  "analysis_mode": "paired",
+  "context": "all_controls",
+  "replicates": [1, 2, 3, 4, 5],
+  "injection_counts": [1, 2, 4],
+  "knn": 4,
+  "orc_alpha": 0.5,
+  "design_seed": 43000
+}

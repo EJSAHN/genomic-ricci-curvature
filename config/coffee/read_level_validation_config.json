@@ -1,0 +1,22 @@
+{
+  "module_name": "paired_read_synthetic_validation",
+  "source_fastq_root": "data/coffee/fastq",
+  "scenario_columns": [
+    "include_primary",
+    "include_conservative"
+  ],
+  "replicates": 5,
+  "mixtures_per_pattern": 4,
+  "read_pairs_per_sample": 6000,
+  "base_seed": 42000,
+  "analysis_modes": [
+    "r1",
+    "paired"
+  ],
+  "kmer": 17,
+  "sketch": 16384,
+  "knn": 4,
+  "orc_alpha": 0.5,
+  "primary_scenario": "primary",
+  "primary_mode": "r1"
+}

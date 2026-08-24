@@ -1,0 +1,29 @@
+{
+  "module_name": "finger_millet_external_reference_based_comparator",
+  "dataset": "finger_millet_PRJNA791522",
+  "reference_accession": "GCA_032690845.1",
+  "master_lock_sha256": "e9117c96aa765bc4cd619e8b66bedc42c88fead82083d566ab330b5b4a503101",
+  "marker_discovery_pairs_per_source": 100000,
+  "source_reserved_prefix_pairs": 100000,
+  "generated_pairs_per_library": 6000,
+  "min_mapq": 20,
+  "min_baseq": 20,
+  "marker_threshold_tiers": [
+    {"min_alt_total": 4, "min_alt_samples": 2, "min_alt_in_one_sample": 4},
+    {"min_alt_total": 3, "min_alt_samples": 2, "min_alt_in_one_sample": 3},
+    {"min_alt_total": 2, "min_alt_samples": 2, "min_alt_in_one_sample": 2}
+  ],
+  "minimum_viable_markers": 100,
+  "max_marker_panel_size": 50000,
+  "max_markers_for_scoring": 5000,
+  "minimum_control_call_rate": 0.30,
+  "minimum_pairwise_marker_overlap": 10,
+  "max_pca_components": 5,
+  "threads": 4,
+  "seed": 932690845,
+  "primary_endpoint": "one_mixture_among_28_controls_using_cross_fitted_reference_qc_score",
+  "performance_thresholds": {"supported": 0.70, "weak_to_moderate": 0.60},
+  "mixture_labels_used_for_model_fitting": false,
+  "outer_evaluation": "one generated-read replicate held out completely",
+  "minimum_free_gb": 25.0
+}

@@ -1,0 +1,21 @@
+{
+  "dataset": "finger_millet_PRJNA791522",
+  "expected_master_lock_sha256": "e9117c96aa765bc4cd619e8b66bedc42c88fead82083d566ab330b5b4a503101",
+  "kmer": 17,
+  "sketch_dimension": 16384,
+  "locked_knn_full_cohort": 4,
+  "locked_knn_synthetic": 2,
+  "orc_alpha": 0.5,
+  "analysis_modes": ["paired", "r1"],
+  "generated_libraries": 560,
+  "read_pairs_per_library": 6000,
+  "replicates": 5,
+  "rare_event_graphs": 735,
+  "workers": 2,
+  "permanova_permutations": 999,
+  "performance_thresholds": {
+    "SUPPORTED": "mean primary AUC >= 0.70",
+    "WEAK_TO_MODERATE": "0.60 <= mean primary AUC < 0.70",
+    "NOT_SUPPORTED": "mean primary AUC < 0.60"
+  }
+}
