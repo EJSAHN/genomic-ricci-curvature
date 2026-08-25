@@ -29,6 +29,8 @@ SECTION_FILL = "DCEFEF"
 SUBTLE_FILL = "F3F7F7"
 HEADER_FONT = Font(color="FFFFFF", bold=True)
 THIN_GREY = Side(style="thin", color="C7D1D1")
+PORTABILITY_OMIT_KEYS = frozenset({"fasta_path", "index_prefix", "align_launcher"})
+LOCAL_ABSOLUTE_PATH_RE = re.compile(r"(?i)(?:[A-Z]:[\\/]|/(?:home|users|mnt|tmp)/)")
 
 
 @dataclass
@@ -110,8 +112,35 @@ def coerce_value(value: str) -> Any:
     return sanitize_text(text)
 
 
+def sanitize_nested(value: Any) -> Any:
+    """Remove nonportable path fields and sanitize nested scalar text."""
+    if isinstance(value, Mapping):
+        return {
+            str(key): sanitize_nested(item)
+            for key, item in value.items()
+            if str(key).lower() not in PORTABILITY_OMIT_KEYS
+        }
+    if isinstance(value, list):
+        return [sanitize_nested(item) for item in value]
+    if isinstance(value, tuple):
+        return [sanitize_nested(item) for item in value]
+    if isinstance(value, str):
+        return sanitize_text(value)
+    return value
+
+
 def sanitize_text(value: str) -> str:
-    text = value.replace("\\", "/")
+    """Return portable text, including JSON-encoded nested metadata."""
+    text = value.strip()
+    if text.startswith(("{", "[")) and text.endswith(("}", "]")):
+        try:
+            parsed = json.loads(text)
+        except (TypeError, ValueError, json.JSONDecodeError):
+            pass
+        else:
+            return json.dumps(sanitize_nested(parsed), ensure_ascii=False)
+
+    text = text.replace("\\", "/")
     text = re.sub(r"(?i)^[A-Z]:/", "", text)
     text = re.sub(r"(?i)^.*/(?=(?:generated|results|analysis|reference)/)", "", text)
     return text
@@ -196,12 +225,15 @@ def write_key_value_sheet(workbook, name: str, payload: Mapping[str, Any], title
 
 
 def flatten_mapping(payload: Mapping[str, Any], prefix: str = "") -> Iterable[tuple[str, Any]]:
-    for key, value in payload.items():
+    for key, value in sanitize_nested(payload).items():
         full = f"{prefix}.{key}" if prefix else str(key)
         if isinstance(value, Mapping):
             yield from flatten_mapping(value, full)
         elif isinstance(value, list):
-            yield full, "; ".join(str(item) for item in value)
+            if any(isinstance(item, (Mapping, list)) for item in value):
+                yield full, json.dumps(value, ensure_ascii=False)
+            else:
+                yield full, "; ".join(str(item) for item in value)
         else:
             yield full, value
 
@@ -296,6 +328,27 @@ def rebuild_contents(workbook) -> None:
     sheet.column_dimensions["B"].width = 70
     sheet.freeze_panes = "A5"
     sheet.auto_filter.ref = f"A4:B{3 + len(rows)}"
+
+
+def sanitize_workbook_text(workbook) -> None:
+    """Sanitize text cells after all sheets have been assembled."""
+    for sheet in workbook.worksheets:
+        for row in sheet.iter_rows():
+            for cell in row:
+                if isinstance(cell.value, str) and not cell.value.startswith("="):
+                    cell.value = sanitize_text(cell.value)
+
+
+def find_local_absolute_paths(workbook) -> list[str]:
+    """Return workbook cell addresses that still contain local absolute paths."""
+    issues: list[str] = []
+    for sheet in workbook.worksheets:
+        for row in sheet.iter_rows():
+            for cell in row:
+                value = cell.value
+                if isinstance(value, str) and LOCAL_ABSOLUTE_PATH_RE.search(value):
+                    issues.append(f"{sheet.title}!{cell.coordinate}")
+    return issues
 
 
 def sha256(path: Path) -> str:
@@ -411,6 +464,12 @@ def main() -> None:
     )
 
     rebuild_contents(workbook)
+    sanitize_workbook_text(workbook)
+    path_issues = find_local_absolute_paths(workbook)
+    if path_issues:
+        joined = ", ".join(path_issues[:20])
+        raise RuntimeError(f"Local absolute paths remain in Supplementary Data S1: {joined}")
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
     workbook.save(args.output)
     print(f"[DONE] {args.output}")
