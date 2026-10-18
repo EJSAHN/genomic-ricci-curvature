@@ -11,7 +11,7 @@ The Topological Mixture Score (TMS) ranks libraries for follow-up. It does not d
 | Coffee (*Coffea arabica*) | NCBI SRA BioProject PRJNA783534 (Bawin et al., 2025) | 18 archived libraries |
 | Finger millet (*Eleusine coracana*) | NCBI SRA BioProject PRJNA791522 (Brhane et al., 2022) | 83 archived libraries |
 
-The coffee run metadata (`metadata/coffee/SraRunTable.csv`, an unmodified NCBI Run Selector export) describe 12 single-cultivar libraries and six technical replicates of one 12-cultivar pool (SRR17037618–SRR17037623; two ligation replicates × three PCR replicates). The 12 single-cultivar libraries are the sources for all coffee benchmarks. All 18 libraries are included in the descriptive graph. SRR17037623 is titled as an individual-cultivar library in the SRA, but its cultivar, library-name, and replicate fields place it in the pooled series.
+The coffee run metadata (`metadata/coffee/SraRunTable.csv`, an unmodified NCBI Run Selector export) describe 12 single-cultivar libraries and six technical replicates of one 12-cultivar pool (SRR17037618–SRR17037623; two ligation replicates × three PCR replicates). The 12 single-cultivar libraries are the sources for all coffee benchmarks. All 18 libraries are included in the descriptive graph. The cultivar, library-name, and replicate fields place SRR17037623 in the pooled series.
 
 Raw reads, reference assemblies, and alignment indexes are not redistributed. Reference accessions are listed in the configuration files.
 
@@ -33,7 +33,7 @@ tests/, tools/           unit tests, package checks, and table export
 
 ## Requirements
 
-Python 3.10 or later with the packages in `requirements.txt`. `environment-tested.txt` lists the exact versions used for the reported analyses (Python 3.10.19). Bowtie 2 v2.5.5 is required only for the raw coffee reference workflow.
+Python 3.10 or later with the packages in `requirements.txt`. `environment-tested.txt` lists the exact versions used for the reported analyses (Python 3.10.19). Bowtie 2 v2.5.5 is required for the raw coffee and finger millet reference-based workflows.
 
 ## Checking the package
 
@@ -45,7 +45,7 @@ python -m unittest discover -s tests -v       # unit tests
 python run.py replay --output ../replay_check # numerical replay (a few minutes)
 ```
 
-`replay` recomputes the calibration graph scores from the included distance matrices, re-evaluates the 210 rare-event graphs, and refits the dual-reference cross-fitting models from the included feature matrices, then compares the results with the reported values. It does not realign reads. The output directory must not already exist.
+`replay` recomputes the calibration graph scores from the included distance matrices, re-evaluates 210 rare-event graphs for each of the 12-source and archived 13-source designs, and refits the dual-reference cross-fitting models from the included feature matrices, then compares the results with the reported values. It does not realign reads. The output directory must not already exist.
 
 ## Running the coffee analysis from raw data
 
