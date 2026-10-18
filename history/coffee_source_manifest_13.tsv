@@ -1,0 +1,19 @@
+sample_id	source_role	label_source	include_primary	include_conservative	notes
+SRR17037610	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037611	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037612	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037613	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037614	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037615	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037616	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037617	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037618	metadata_pool_excluded	source_metadata	0	0	
+SRR17037619	metadata_pool_excluded	source_metadata	0	0	
+SRR17037620	metadata_pool_excluded	source_metadata	0	0	
+SRR17037621	metadata_pool_excluded	source_metadata	0	0	
+SRR17037622	metadata_pool_excluded	source_metadata	0	0	
+SRR17037623	non_pool_annotated_reference	absence_of_pool_annotation	1	0	Excluded from conservative parent set because it is the kNN-invariant high-TMS candidate in the idealized calibration baseline.
+SRR17037624	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037625	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037626	non_pool_annotated_reference	absence_of_pool_annotation	1	1	
+SRR17037627	non_pool_annotated_reference	absence_of_pool_annotation	1	1	

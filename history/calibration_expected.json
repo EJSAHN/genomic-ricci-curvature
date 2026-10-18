@@ -1,0 +1,46 @@
+{
+  "original_canonical_calibration_sha256": "e61e3beab41f87d6244473d2ae5d0e57f02a8594e5872ef631e147f8e63cc503",
+  "original_canonical_sweep_sha256": "aad158f1af91e20462ca96659b1753ebb629217f59915513c00fc5825e23e915",
+  "R1_main": {
+    "n_individual": 13,
+    "n_synthetic": 40,
+    "auc": 0.7461538461538463,
+    "average_precision": 0.8824796408446371,
+    "reads": 6000,
+    "kmer": 17,
+    "seed": 42
+  },
+  "R1_pilot": {
+    "n_individual": 13,
+    "n_synthetic": 40,
+    "auc": 0.7538461538461538,
+    "average_precision": 0.8837037407484599,
+    "reads": 3000,
+    "kmer": 17,
+    "seed": 42
+  },
+  "corrected_n_individual": 12,
+  "R1_excluded": [
+    "SRR17037618",
+    "SRR17037619",
+    "SRR17037620",
+    "SRR17037621",
+    "SRR17037622"
+  ],
+  "corrected_excluded": [
+    "SRR17037618",
+    "SRR17037619",
+    "SRR17037620",
+    "SRR17037621",
+    "SRR17037622",
+    "SRR17037623"
+  ],
+  "seed_scheme": {
+    "read_sweep_base_seed": 42,
+    "kmer_sweep_base_seed_plus": 1000,
+    "n_boot": 30
+  },
+  "code1_run": "20261017_221812_e4c824",
+  "source_commit": "8f9e3954a69d004e6fce9874030ab35eed37a5c3",
+  "patched_sweep_sha256": "bbf56a52508db8efc9a1ba76a3539a374c93f78c427cc85237fa7b28d6a3902e"
+}

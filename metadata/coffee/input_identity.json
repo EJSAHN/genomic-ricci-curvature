@@ -1,0 +1,99 @@
+{
+  "canonical_script_sha": "e61e3beab41f87d6244473d2ae5d0e57f02a8594e5872ef631e147f8e63cc503",
+  "code1_run": "20261017_221812_e4c824",
+  "code2_version": "1.0.1",
+  "code_package_sha": "896015e79f491827bc641fa19805c04a50bfc91d65d21141caf4d7e15070eaa0",
+  "environment": {
+    "blas_threads": "1",
+    "networkx": "3.4.2",
+    "numpy": "2.2.6",
+    "openpyxl": "3.1.5",
+    "pandas": "2.3.3",
+    "python": "3.10.19",
+    "pythonhashseed": "0",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.2"
+  },
+  "read_prefixes": [
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "6a76e272e9828c2bc7567b060b0762909fc1b88c948ecbbb5ab280eade0dde36",
+      "records": 12000,
+      "sample": "SRR17037610"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "a9f18038e0fca618eae889d4f0e896cc426c7d9108d69a56d9c6c95750612494",
+      "records": 12000,
+      "sample": "SRR17037611"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "ba2ee06997b478125eae4e0847ba7f1ee0bd6dde99a19d0b00ef0ad739f4a5d5",
+      "records": 12000,
+      "sample": "SRR17037612"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "0c2026206554acf63f3dfa6488823db42ab7d903739222d45654ad9de1b4488f",
+      "records": 12000,
+      "sample": "SRR17037613"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "3a43778372aa636f35b1628d53990822854751e1e19d9707d2550e31a05c4616",
+      "records": 12000,
+      "sample": "SRR17037614"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "b9a642dc6548137bf07f8a09635a504d94dabea5fb8a1d57f44ffb6021573965",
+      "records": 12000,
+      "sample": "SRR17037615"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "3a3a6e5b65815d4ac4c7cac9eb1ad4ed09ed13c1352fad1bad4c9fce4d58f9b6",
+      "records": 12000,
+      "sample": "SRR17037616"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "28513d53e5ef278b43d10014517343f5506c34f93a71ebabfd7ad78d36d8a48a",
+      "records": 12000,
+      "sample": "SRR17037617"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "36c7d39c0ee205087579064f9ee7da5b8bacdc071e62eda0849f9b8582c7aeb6",
+      "records": 12000,
+      "sample": "SRR17037623"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "375f2db97ac554367353713b496f8754a54b6268b9a66737faf5fbf79a05ccd9",
+      "records": 12000,
+      "sample": "SRR17037624"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "d6fa3afe86850628286ab9abbbd18902d8e622b530642bb0c3a127021e1e04d6",
+      "records": 12000,
+      "sample": "SRR17037625"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "81d3b43f2d95ce8c29e3333cf7b2f61bac791133185e1739413bdefdaa2c6347",
+      "records": 12000,
+      "sample": "SRR17037626"
+    },
+    {
+      "mate": 1,
+      "normalized_prefix_sha256": "89bdf405475245783281eaa21f39032535a3619e1aea1a9a82b6405b9517a4cc",
+      "records": 12000,
+      "sample": "SRR17037627"
+    }
+  ],
+  "source_csv_sha": "089575fa51fe56b239cdaee475959f7247d0f37ad802c1a05d5c2527b81e874c",
+  "environment_scope": "Analytical dependencies recorded during the corrected calibration execution; graphical dependency omitted from this numerical distribution."
+}

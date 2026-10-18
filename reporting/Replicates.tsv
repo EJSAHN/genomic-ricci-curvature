@@ -1,0 +1,98 @@
+endpoint_id	replicate	auc	ap	source	selector
+coffee_historical_13_calibration	42	0.7461538461538462	0.8824796408446374	coffee_calibration_scores_R1.csv	all rows; score=mixture_score_ot; positive=synthetic_pool
+coffee_corrected_12_calibration	42	0.8739583333333333	0.9464892214640201	coffee_calibration_scores.csv	all rows; score=mixture_score_ot; positive=synthetic_pool
+coffee_historical_13_batch_r1	1	0.4439102564102564	0.6299156299156299	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=r1; group by replicate; score=tms
+coffee_historical_13_batch_r1	2	0.6282051282051282	0.7341384075759076	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=r1; group by replicate; score=tms
+coffee_historical_13_batch_r1	3	0.5432692307692307	0.659031759031759	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=r1; group by replicate; score=tms
+coffee_historical_13_batch_r1	4	0.5432692307692307	0.6703535297285297	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=r1; group by replicate; score=tms
+coffee_historical_13_batch_r1	5	0.5448717948717948	0.6783220720720721	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=r1; group by replicate; score=tms
+coffee_historical_13_batch_paired	1	0.42788461538461536	0.6219299656799657	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=paired; group by replicate; score=tms
+coffee_historical_13_batch_paired	2	0.5977564102564102	0.7240460524427915	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=paired; group by replicate; score=tms
+coffee_historical_13_batch_paired	3	0.6266025641025641	0.7009326634326634	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=paired; group by replicate; score=tms
+coffee_historical_13_batch_paired	4	0.5833333333333334	0.7393590036972391	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=paired; group by replicate; score=tms
+coffee_historical_13_batch_paired	5	0.5608974358974359	0.7047813641563643	coffee_batch_node_scores.tsv	scenario=primary; analysis_mode=paired; group by replicate; score=tms
+coffee_corrected_12_batch_r1	1	0.4774305555555556	0.7112110112110113	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=r1; group by replicate; score=tms
+coffee_corrected_12_batch_r1	2	0.5173611111111112	0.6874007936507937	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=r1; group by replicate; score=tms
+coffee_corrected_12_batch_r1	3	0.5746527777777778	0.7193228680361032	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=r1; group by replicate; score=tms
+coffee_corrected_12_batch_r1	4	0.6354166666666666	0.7685185185185185	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=r1; group by replicate; score=tms
+coffee_corrected_12_batch_r1	5	0.5138888888888888	0.6702590505899331	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=r1; group by replicate; score=tms
+coffee_corrected_12_batch_paired	1	0.6076388888888888	0.7673850759377074	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=paired; group by replicate; score=tms
+coffee_corrected_12_batch_paired	2	0.546875	0.706855413105413	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=paired; group by replicate; score=tms
+coffee_corrected_12_batch_paired	3	0.4982638888888889	0.6656059218559218	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=paired; group by replicate; score=tms
+coffee_corrected_12_batch_paired	4	0.5399305555555556	0.7438457648016471	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=paired; group by replicate; score=tms
+coffee_corrected_12_batch_paired	5	0.5659722222222222	0.6983283730158729	coffee_batch_node_scores.tsv	scenario=conservative; analysis_mode=paired; group by replicate; score=tms
+coffee_historical_13_rare_1	1	0.4743589743589744	0.10019841269841268	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_historical_13_rare_1	2	0.6362179487179488	0.28214285714285714	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_historical_13_rare_1	3	0.5032051282051282	0.1359126984126984	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_historical_13_rare_1	4	0.5833333333333334	0.2853174603174603	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_historical_13_rare_1	5	0.5673076923076923	0.20466269841269838	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_historical_13_rare_2	1	0.4647435897435897	0.16388888888888886	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_historical_13_rare_2	2	0.6458333333333334	0.3549603174603175	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_historical_13_rare_2	3	0.5240384615384616	0.20972222222222217	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_historical_13_rare_2	4	0.6121794871794871	0.3451388888888889	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_historical_13_rare_2	5	0.5544871794871794	0.22916666666666663	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_historical_13_rare_4	1	0.4487179487179487	0.2531862745098039	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_historical_13_rare_4	2	0.6073717948717948	0.4276202147525677	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_historical_13_rare_4	3	0.5208333333333334	0.2834967320261437	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_historical_13_rare_4	4	0.594551282051282	0.4085375816993464	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_historical_13_rare_4	5	0.5528846153846154	0.31601015406162464	coffee_rare_rep_metrics_R1.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_corrected_12_rare_1	1	0.6336805555555555	0.2923076923076923	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_corrected_12_rare_1	2	0.5399305555555555	0.2037393162393162	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_corrected_12_rare_1	3	0.5069444444444444	0.20846306471306467	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_corrected_12_rare_1	4	0.6753472222222222	0.30785256410256406	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_corrected_12_rare_1	5	0.4861111111111111	0.1934218559218559	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=1; rows=2,3,4,5,6
+coffee_corrected_12_rare_2	1	0.6493055555555555	0.345734126984127	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_corrected_12_rare_2	2	0.5503472222222222	0.25228174603174597	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_corrected_12_rare_2	3	0.5121527777777778	0.2652777777777777	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_corrected_12_rare_2	4	0.6527777777777778	0.3819444444444444	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_corrected_12_rare_2	5	0.5052083333333334	0.24484126984126978	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=2; rows=7,8,9,10,11
+coffee_corrected_12_rare_4	1	0.626736111111111	0.43506944444444445	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_corrected_12_rare_4	2	0.5729166666666666	0.3683035714285714	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_corrected_12_rare_4	3	0.5590277777777778	0.3414186507936508	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_corrected_12_rare_4	4	0.6128472222222222	0.396031746031746	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_corrected_12_rare_4	5	0.5121527777777778	0.35067791005291005	coffee_rare_rep_metrics.tsv	context=all_controls; analysis_mode=paired; injection_count=4; rows=12,13,14,15,16
+coffee_historical_13_reference_batch	1	0.5641025641025641	0.7006103303798995	coffee_ref_batch_metrics_R1.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_historical_13_reference_batch	2	0.5801282051282051	0.7467734414724663	coffee_ref_batch_metrics_R1.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_historical_13_reference_batch	3	0.4358974358974359	0.6262431930602381	coffee_ref_batch_metrics_R1.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_historical_13_reference_batch	4	0.5096153846153846	0.6428914468157059	coffee_ref_batch_metrics_R1.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_historical_13_reference_batch	5	0.5448717948717949	0.7290785289349897	coffee_ref_batch_metrics_R1.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_corrected_12_reference_batch	1	0.5868055555555556	0.7395007109656035	coffee_ref_batch_metrics.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_corrected_12_reference_batch	2	0.6354166666666667	0.7498337642147027	coffee_ref_batch_metrics.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_corrected_12_reference_batch	3	0.5590277777777778	0.7006158090457738	coffee_ref_batch_metrics.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_corrected_12_reference_batch	4	0.4756944444444444	0.6337348700550393	coffee_ref_batch_metrics.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+coffee_corrected_12_reference_batch	5	0.7118055555555556	0.8463046568867774	coffee_ref_batch_metrics.tsv	score_variant=reference_qc_crossfit; rows=2,9,16,23,30
+finger_batch_paired	1	0.4836309523809524	0.7698127674484467	finger_batch_replicates.tsv	analysis_mode=paired
+finger_batch_paired	2	0.5029761904761905	0.8040035120449853	finger_batch_replicates.tsv	analysis_mode=paired
+finger_batch_paired	3	0.5423044217687074	0.7960766864457305	finger_batch_replicates.tsv	analysis_mode=paired
+finger_batch_paired	4	0.4119897959183673	0.7213411894347824	finger_batch_replicates.tsv	analysis_mode=paired
+finger_batch_paired	5	0.5231717687074829	0.7443456642894327	finger_batch_replicates.tsv	analysis_mode=paired
+finger_rare_1	1	0.64328231292517	0.16161524780584471	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=1
+finger_rare_1	2	0.6870748299319727	0.25686395548415897	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=1
+finger_rare_1	3	0.5869472789115646	0.15041221103170152	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=1
+finger_rare_1	4	0.5822704081632653	0.14102000441367174	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=1
+finger_rare_1	5	0.5278486394557822	0.08473206915325138	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=1
+finger_reference_rare_1	1	0.7738095238095238	0.2765997442331621	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=1
+finger_reference_rare_1	2	0.7708333333333334	0.386132402158585	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=1
+finger_reference_rare_1	3	0.6211734693877551	0.22637781032204593	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=1
+finger_reference_rare_1	4	0.7308673469387755	0.33190068964035124	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=1
+finger_reference_rare_1	5	0.6909013605442176	0.30197297448729765	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=1
+finger_rare_2	1	0.6247874149659864	0.19655319684206235	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=2
+finger_rare_2	2	0.6728316326530612	0.2768007076056611	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=2
+finger_rare_2	3	0.6090561224489797	0.19800341400333224	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=2
+finger_rare_2	4	0.5739795918367346	0.16520279583636502	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=2
+finger_rare_2	5	0.537627551020408	0.11648044415901553	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=2
+finger_reference_rare_2	1	0.7738095238095238	0.32148507188423153	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=2
+finger_reference_rare_2	2	0.7708333333333334	0.42875944820861467	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=2
+finger_reference_rare_2	3	0.6211734693877552	0.2592145792648661	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=2
+finger_reference_rare_2	4	0.7308673469387755	0.37370184555949876	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=2
+finger_reference_rare_2	5	0.6909013605442177	0.3409591920261016	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=2
+finger_rare_4	1	0.6271258503401361	0.25643708435200036	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=4
+finger_rare_4	2	0.641794217687075	0.3399601149010998	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=4
+finger_rare_4	3	0.6262755102040817	0.27010942975548374	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=4
+finger_rare_4	4	0.5465561224489794	0.20882075973544253	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=4
+finger_rare_4	5	0.5527210884353742	0.18136311439882866	finger_rare_replicates.tsv	analysis_mode=paired; injection_count=4
+finger_reference_rare_4	1	0.7738095238095238	0.39910493130307373	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=4
+finger_reference_rare_4	2	0.7708333333333334	0.5023991621485356	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=4
+finger_reference_rare_4	3	0.6211734693877552	0.32262401546050046	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=4
+finger_reference_rare_4	4	0.7308673469387754	0.44485410755080373	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=4
+finger_reference_rare_4	5	0.6909013605442178	0.4047219468084129	finger_ref_rare_replicates.tsv	score_name=reference_qc_crossfit; injection_count=4

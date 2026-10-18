@@ -192,6 +192,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--reference_manifest", required=True)
     ap.add_argument("--sample_manifest", required=True)
+    ap.add_argument("--expected_source_count", type=int, default=12)
     ap.add_argument("--source_fastq_root", required=True)
     ap.add_argument("--generated_fastq_manifest", required=True)
     ap.add_argument("--source_sampling_summary", required=True)
@@ -222,8 +223,8 @@ def main() -> None:
         .astype(str)
         .tolist()
     )
-    if len(source_samples) != 13:
-        raise SystemExit(f"Expected 13 primary source libraries, found {len(source_samples)}")
+    if len(source_samples) != args.expected_source_count:
+        raise SystemExit(f"Expected {args.expected_source_count} declared source libraries, found {len(source_samples)}")
 
     print("[PREP] Identifying generated read pairs and reserving the real-data scoring segment.")
     exclusion_masks, exclusion_counts = build_exclusion_masks(

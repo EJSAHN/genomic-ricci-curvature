@@ -1,0 +1,13 @@
+sample_id	read_pairs_available	generated_pairs_excluded	real_segment_pairs_reserved	total_pairs_seen	eligible_independent_pairs	panel_pairs_selected	overlap_with_generated_pairs	overlap_with_reserved_real_segment	selection_seed	source_file
+SRR17037610	1110262	172800	42198	1110262	895264	100000	0	0	3393268418	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037611	1150349	170880	42543	1150349	936926	100000	0	0	1202231215	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037612	1104776	181440	41742	1104776	881594	100000	0	0	1100789220	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037613	1069387	172920	41719	1069387	854748	100000	0	0	3735091646	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037614	1013182	178620	41130	1013182	793432	100000	0	0	3178894071	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037615	1170170	181380	42174	1170170	946616	100000	0	0	2142619261	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037616	1174084	174900	42698	1174084	956486	100000	0	0	2919257767	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037617	1236457	173520	42957	1236457	1019980	100000	0	0	2462354974	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037624	992618	172980	41298	992618	778340	100000	0	0	1947195261	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037625	1000554	173640	41272	1000554	785642	100000	0	0	3948715254	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037626	691060	176640	37130	691060	477290	100000	0	0	3639049503	04_corrected_markers/marker_discovery_independence.tsv
+SRR17037627	1305614	176220	43292	1305614	1086102	100000	0	0	2380879452	04_corrected_markers/marker_discovery_independence.tsv

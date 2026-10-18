@@ -2,7 +2,6 @@
   "module_name": "paired_read_synthetic_validation",
   "source_fastq_root": "data/coffee/fastq",
   "scenario_columns": [
-    "include_primary",
     "include_conservative"
   ],
   "replicates": 5,
@@ -17,6 +16,7 @@
   "sketch": 16384,
   "knn": 4,
   "orc_alpha": 0.5,
-  "primary_scenario": "primary",
-  "primary_mode": "r1"
+  "primary_scenario": "conservative",
+  "primary_mode": "r1",
+  "sampling_reconstruction": "Use history/coffee_source_manifest_13.tsv to reconstruct the original two-scenario read allocation before scoring the corrected conservative scenario."
 }

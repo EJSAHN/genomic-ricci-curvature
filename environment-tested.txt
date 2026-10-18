@@ -1,0 +1,8 @@
+-r requirements.txt
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.2
+scikit-learn==1.7.2
+networkx==3.4.2
+openpyxl==3.1.5
+# Python 3.10.19 and Bowtie 2 2.5.5 were used for the recorded Windows analyses.

@@ -3,7 +3,7 @@
 10_summarize_score_components.py
 Summarize score-component performance on synthetic mixtures.
 
-Uses Supplementary_Data_S1_Submission.xlsx:
+Accepts explicitly selected workbook sheets:
   - Synthetic_Node_Scores: expects sample, label, betweenness, neg_orc_incidence, mixture_score_ot
   - Synthetic_Truth: expects sample, entropy_norm (optional but recommended)
 
@@ -78,8 +78,9 @@ def compute_metrics(y_true: np.ndarray, scores: np.ndarray, entropy: np.ndarray 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--s1", required=True, help="Path to Supplementary_Data_S1_Submission.xlsx")
-    ap.add_argument("--scores_sheet", default="Synthetic_Node_Scores")
-    ap.add_argument("--truth_sheet", default="Synthetic_Truth")
+    ap.add_argument("--scores_sheet", required=True)
+    ap.add_argument("--truth_sheet", required=True)
+    ap.add_argument("--header", type=int, default=0, help="Zero-based header row; Appendix S1 tables use 3")
     ap.add_argument("--outdir", required=True)
     args = ap.parse_args()
 
@@ -87,8 +88,8 @@ def main():
     outdir = Path(args.outdir).resolve()
     outdir.mkdir(parents=True, exist_ok=True)
 
-    scores = pd.read_excel(s1, sheet_name=args.scores_sheet)
-    truth = pd.read_excel(s1, sheet_name=args.truth_sheet)
+    scores = pd.read_excel(s1, sheet_name=args.scores_sheet, header=args.header)
+    truth = pd.read_excel(s1, sheet_name=args.truth_sheet, header=args.header)
 
     # Required columns
     req_scores = {"sample", "label", "betweenness", "neg_orc_incidence", "mixture_score_ot"}
@@ -106,7 +107,7 @@ def main():
         merged = scores.copy()
         entropy = None
 
-    # Label handling: use scores['label'] (already provided in your S1)
+    # Label handling uses the explicitly selected score sheet.
     lab = merged["label"]
     if lab.dtype == bool:
         y = lab.astype(int).to_numpy()
@@ -118,7 +119,7 @@ def main():
     # Components
     betw = pd.to_numeric(merged["betweenness"], errors="coerce")
     negorc = pd.to_numeric(merged["neg_orc_incidence"], errors="coerce")
-    full = pd.to_numeric(merged["mixture_score_ot"], errors="coerce")  # this is your shipped synthetic score
+    full = pd.to_numeric(merged["mixture_score_ot"], errors="coerce")  # stored synthetic score
 
     rows = []
 

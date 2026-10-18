@@ -1,0 +1,19 @@
+sample_id	scenario	replicate	class_label	source_role	label_source	include_primary
+SRR17037610	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037611	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037612	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037613	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037614	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037615	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037616	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037617	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037618	real_data	0	metadata_pool_candidate	pooled_series_technical_replicate	SraRunTable.csv: Cultivar + Library Name + replicate	0
+SRR17037619	real_data	0	metadata_pool_candidate	pooled_series_technical_replicate	SraRunTable.csv: Cultivar + Library Name + replicate	0
+SRR17037620	real_data	0	metadata_pool_candidate	pooled_series_technical_replicate	SraRunTable.csv: Cultivar + Library Name + replicate	0
+SRR17037621	real_data	0	metadata_pool_candidate	pooled_series_technical_replicate	SraRunTable.csv: Cultivar + Library Name + replicate	0
+SRR17037622	real_data	0	metadata_pool_candidate	pooled_series_technical_replicate	SraRunTable.csv: Cultivar + Library Name + replicate	0
+SRR17037623	real_data	0	metadata_pool_candidate	pooled_series_technical_replicate	SraRunTable.csv: Cultivar + Library Name + replicate	0
+SRR17037624	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037625	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037626	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1
+SRR17037627	real_data	0	reference_library	single_cultivar_metadata	SraRunTable.csv: Cultivar + Library Name + replicate	1

@@ -1,0 +1,15 @@
+{
+  "raw_fastq_dir": "../inputs/coffee/fastq",
+  "generated_fastq_dir": "../inputs/coffee/generated/fastq",
+  "bowtie2_executable": "../tools/bowtie2-align-s.exe",
+  "references": {
+    "ET39": {
+      "fasta": "../inputs/references/ET39/ET39.fna",
+      "index_prefix": "../inputs/indices/ET39/ET39"
+    },
+    "Cara1": {
+      "fasta": "../inputs/references/Cara1/Cara1.fna",
+      "index_prefix": "../inputs/indices/Cara1/Cara1"
+    }
+  }
+}

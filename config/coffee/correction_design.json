@@ -1,0 +1,14 @@
+{
+  "source_manifest": "coffee_sample_manifest.tsv",
+  "corrected_scenario": "conservative",
+  "n_sources": 12,
+  "n_replicates": 5,
+  "mixtures_per_replicate": 24,
+  "read_pairs_per_generated_library": 6000,
+  "calibration": {"seed": 42, "reads_per_sample": 6000, "kmer": 17, "sketch": 16384, "n_synth": 40, "max_parents": 3, "min_minor": 0.10, "knn": 4, "alpha": 0.5, "read_mode": "r1"},
+  "sensitivity": {"base_seed": 42, "n_repetitions": 30, "read_depths": [3000, 6000, 12000], "kmer_lengths": [15, 17, 19, 21], "base_kmer": 17, "base_reads": 6000},
+  "read_allocation_seed": 42000,
+  "rare_event": {"seed": 43000, "analysis_mode": "paired", "context": "all_controls", "injection_counts": [1, 2, 4], "knn": 4, "alpha": 0.5},
+  "reference": {"marker_seed": 52001, "feature_seed": 53001, "source_pairs": 100000, "real_skip_pairs": 100000, "real_pairs": 50000, "threads": 4, "min_mapq": 20, "min_baseq": 20, "min_alt_total": 4, "min_alt_samples": 2, "min_alt_in_one_sample": 4, "max_markers": 50000, "min_control_call_rate": 0.30, "max_features": 5000, "max_pca_components": 5, "min_overlap": 10},
+  "reporting_sd_ddof": 1
+}

@@ -1,0 +1,5 @@
+method	auc	ap	n_libraries	pool_library_replicates	individual_libraries	interpretation
+TMS_score	0.5	0.6462418300653595	18	6	12	Descriptive within-cohort result; one recorded pool series; not six independent biological pools; cohort-derived markers
+reference_score	0.9722222222222222	0.9484126984126984	18	6	12	Descriptive within-cohort result; one recorded pool series; not six independent biological pools; cohort-derived markers
+ET39_score	1.0	0.9999999999999999	18	6	12	Descriptive within-cohort result; one recorded pool series; not six independent biological pools; cohort-derived markers
+Cara1_score	0.7083333333333334	0.48148148148148145	18	6	12	Descriptive within-cohort result; one recorded pool series; not six independent biological pools; cohort-derived markers

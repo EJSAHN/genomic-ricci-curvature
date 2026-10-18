@@ -188,7 +188,7 @@ def main() -> None:
     ap.add_argument("--source_fastq_root", required=True)
     ap.add_argument("--outdir", required=True)
     ap.add_argument("--logs_dir", required=True)
-    ap.add_argument("--scenario", default="primary")
+    ap.add_argument("--scenario", default="conservative")
     ap.add_argument("--generated_pairs", type=int, default=6000)
     ap.add_argument("--real_pairs", type=int, default=50000)
     ap.add_argument("--real_skip_pairs", type=int, default=100000)
